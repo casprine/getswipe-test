@@ -11,9 +11,33 @@ const GlobalStyles = styled.createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-      Droid Sans, Helvetica Neue, sans-serif;
-    outline: 1px solid red;
+  }
+
+  html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  svg {
+    display: block;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-block-end: 0;
   }
 
   main {
@@ -36,6 +60,22 @@ const GlobalStyles = styled.createGlobalStyle`
     width: 100%;
     position: relative;
     box-sizing: border-box;
+  }
+
+  .rounded {
+    border-radius: 3px;
+  }
+
+  .border {
+    border: 1px solid ${({ theme }) => theme.colors.gray300};
+  }
+
+  .black-text {
+    color: ${({ theme }) => theme.colors.primaryText};
+  }
+
+  .gray-text {
+    color: ${({ theme }) => theme.colors.gray500};
   }
 `;
 
