@@ -27,10 +27,12 @@ const Nav = styled.nav`
   .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .header {
     display: flex;
+    align-items: center;
 
     h3 {
       margin-right: 20px;

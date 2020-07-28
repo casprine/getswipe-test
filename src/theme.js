@@ -1,6 +1,7 @@
 export default {
   colors: {
-    primaryText: '#2D3748',
+    primaryText: '#1A202C',
+    gray600: '#718096',
     gray500: '#A0AEC0',
     gray400: '#CBD5E0',
     gray300: '#E2E8F0',
@@ -11,5 +12,7 @@ export default {
   padding: {
     sm: '5px',
     lg: '10px',
+    xlg: '15px',
+    xxlg: '20px',
   },
 };

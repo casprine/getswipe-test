@@ -46,12 +46,16 @@ const GlobalStyles = styled.createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-      'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+      'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
     font-feature-settings: 'calt', 'kern', 'liga';
+  }
+
+  button {
+    cursor: pointer;
   }
 
   .container {
@@ -63,11 +67,11 @@ const GlobalStyles = styled.createGlobalStyle`
   }
 
   .rounded {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 
   .border {
-    border: 1px solid ${({ theme }) => theme.colors.gray300};
+    border: 1.5px solid ${({ theme }) => theme.colors.gray300};
   }
 
   .black-text {
@@ -75,7 +79,51 @@ const GlobalStyles = styled.createGlobalStyle`
   }
 
   .gray-text {
-    color: ${({ theme }) => theme.colors.gray500};
+    color: ${({ theme }) => theme.colors.gray600};
+  }
+
+  .white-text {
+    color: white;
+  }
+
+  .page-wrapper {
+    padding: 40px 0;
+  }
+
+  .button-text {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  .button-group {
+    button {
+      padding: 12px 20px;
+
+      p {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .btn-grp-first {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-width: 0;
+  }
+
+  .btn-grp-last {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+  }
+
+  .btn-grp-middle {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 `;
 
