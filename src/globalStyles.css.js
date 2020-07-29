@@ -77,7 +77,7 @@ const GlobalStyles = styled.createGlobalStyle`
   }
 
   .border {
-    border: 1.5px solid ${({ theme }) => theme.colors.gray300};
+    border: 1px solid ${({ theme }) => theme.colors.gray300};
   }
 
   .black-text {
@@ -147,6 +147,10 @@ const GlobalStyles = styled.createGlobalStyle`
     border: 0.5px solid ${({ theme }) => theme.colors.gray300};
     border-radius: 4px;
     padding: ${({ theme }) => theme.padding.extra};
+  }
+
+  .input-container {
+    position: relative;
   }
 `;
 

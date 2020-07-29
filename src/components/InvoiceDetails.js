@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // components
 import Input from './Input';
-import { StarIcon, PenIcon } from '../icons';
+import { StarIcon, PenIcon, HashIcon, CalendarIcon } from '../icons';
 
 const InvoiceDetails = () => {
   return (
@@ -17,18 +17,18 @@ const InvoiceDetails = () => {
             <h4 className="company-name">Swipe</h4>
             <div className="company-email">
               <p className="gray-text">vendors@getswipe.com</p>
-              <div className="edit-icon center">
+              <div className="edit-icon center" tabIndex="3">
                 <PenIcon />
               </div>
-              <h5>Edit</h5>
+              <h5 tabIndex="3">Edit</h5>
             </div>
           </div>
         </div>
 
         <div className="right">
-          <Input placeholder="Invoice Number" />
-          <Input placeholder="Your Address" />
-          <Input placeholder="Invoice Date" />
+          <Input placeholder="Invoice Number" prependIcon={HashIcon} />
+          <Input placeholder="Your Address" prependIcon={HashIcon} />
+          <Input placeholder="Invoice Date" prependIcon={CalendarIcon} />
         </div>
       </StyledInvoiceDetails>
     </>
@@ -39,6 +39,12 @@ const StyledInvoiceDetails = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  /* 
+  outline: 1px solid red;
+
+  * {
+    outline: 1px solid red;
+  } */
 
   .logo-container {
     display: flex;
@@ -48,16 +54,10 @@ const StyledInvoiceDetails = styled.div`
     height: 110px;
     border-radius: 4px;
     background-color: ${({ theme }) => theme.colors.primaryText};
-    margin-bottom: 50px;
+    margin-bottom: 60px;
   }
 
   .left {
-    /* outline: 1px solid red;
-
-    * {
-      outline: 1px solid red;
-    } */
-
     .company-email {
       display: flex;
       justify-content: center;
@@ -80,8 +80,8 @@ const StyledInvoiceDetails = styled.div`
 
       h5 {
         cursor: pointer;
-        font-weight: 400;
       }
+      font-weight: 400;
     }
   }
 

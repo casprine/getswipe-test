@@ -13,11 +13,11 @@ const App = () => {
           <Button variant="outline" tabIndex="1">
             <p className="black-text button-text">Save</p>
           </Button>
-          <Button variant="outline">
+          <Button variant="outline" tabIndex="1">
             <p className="black-text button-text">Preview</p>
           </Button>
 
-          <Button variant="outline">
+          <Button variant="outline" tabIndex="1">
             <p className="black-text button-text">Preview</p>
           </Button>
         </ButtonGroup>
