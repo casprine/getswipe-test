@@ -1,19 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Checkbox = ({ name, text }) => {
+const Checkbox = ({ text }) => {
   const [checked, setChecked] = React.useReducer((toggled) => !toggled, true);
   return (
     <StyledCheckbox>
       {text}
-      <input type="checkbox" checked={checked} onClick={setChecked} />
-      <span class="checkmark" />
+      <input type="checkbox" checked={checked} onChange={setChecked} />
+      <span className="checkmark" />
     </StyledCheckbox>
   );
 };
 
 const StyledCheckbox = styled.label`
-  margin: 10px 0;
   display: block;
   position: relative;
   padding-left: 30px;

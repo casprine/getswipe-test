@@ -22,25 +22,9 @@ const InvoiceTemplate = () => {
 };
 
 const StyledInvoiceTemplate = styled.div`
-  select {
-    padding: ${({ theme }) => `12px ${theme.padding.xlg}`};
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 5px;
-    color: ${({ theme }) => theme.colors.primaryText};
-    width: 100%;
-    background-color: white;
-    margin: 8px 0;
-    border: 1px solid ${({ theme }) => theme.colors.gray300};
-  }
-
   h4 {
     font-size: 16px;
   }
-  /* 
-  * {
-    outline: 1px solid red;
-  } */
 `;
 
 export default InvoiceTemplate;

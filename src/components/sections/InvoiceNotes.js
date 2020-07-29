@@ -23,7 +23,7 @@ const StyledInvoiceNotes = styled.div`
     font-size: 14px;
     font-weight: 500;
     border-radius: 5px;
-    border: 1.5px solid ${({ theme }) => theme.colors.gray300};
+    border: 1px solid ${({ theme }) => theme.colors.gray300};
     padding: ${({ theme }) => `12px ${theme.padding.xlg}`};
   }
 

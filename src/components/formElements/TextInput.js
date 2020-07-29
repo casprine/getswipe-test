@@ -55,7 +55,6 @@ const StyledInput = styled.div`
   .prepend-icon {
     position: absolute;
     text-align: right;
-    position: absolute;
     right: 15px;
     top: 50%;
     margin-top: -5px;

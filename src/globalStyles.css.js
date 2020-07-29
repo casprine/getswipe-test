@@ -130,17 +130,15 @@ const GlobalStyles = styled.createGlobalStyle`
 
   .sections {
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-column-gap: ${({ theme }) => theme.padding.xxlg};
+    grid-column-gap: ${({ theme }) => theme.padding.extra};
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr 2fr;
 
     .left-section {
-      grid-column-start: 1;
-      grid-column-end: 2.6;
+      grid-column: 1 / 5;
     }
 
     .right-section {
-      grid-column-start: 2;
-      grid-column-end: 5;
+      grid-column: auto / span 2;
     }
   }
 
@@ -156,6 +154,23 @@ const GlobalStyles = styled.createGlobalStyle`
 
   .input-container {
     position: relative;
+  }
+
+  .section-gutter {
+    margin-bottom: 10px;
+  }
+
+  select {
+    padding: ${({ theme }) => `12px ${theme.padding.lg}`};
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    color: ${({ theme }) => theme.colors.primaryText};
+    width: 100%;
+    background-color: white;
+    margin: 8px 0;
+    border: 1px solid ${({ theme }) => theme.colors.gray300};
+    margin: 15px 0;
   }
 `;
 
