@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Checkbox = ({ text }) => {
+const Checkbox = ({ text, className }) => {
   const [checked, setChecked] = React.useReducer((toggled) => !toggled, true);
   return (
-    <StyledCheckbox>
+    <StyledCheckbox className={className}>
       {text}
       <input type="checkbox" checked={checked} onChange={setChecked} />
       <span className="checkmark" />

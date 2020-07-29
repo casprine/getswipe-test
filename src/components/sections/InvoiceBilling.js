@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 // components
-import { TextInput } from '../formElements';
-import { CalendarIcon } from '../../icons';
+import { TextInput, Checkbox } from '../formElements';
+import { CalendarIcon, VisaIcon, BankIcon, SwipeIcon, CreditCardIcon } from '../../icons';
 
 const InvoiceBilling = () => {
   return (
@@ -32,14 +32,31 @@ const InvoiceBilling = () => {
         <label>A link to a swipe payment page will be included in the invoice email</label>
       </div>
 
-      <div className="form-control">
+      <div className="form-control payments">
         <label>Accepted payment methods</label>
-
         <div className="payment-options">
-          <div className="option"></div>
-          <div className="option"></div>
-          <div className="option"></div>
-          <div className="option"></div>
+          <div className="option center" tabIndex="0">
+            <SwipeIcon />
+          </div>
+          <div className="option center" tabIndex="0">
+            <VisaIcon />
+          </div>
+          <div className="option center" tabIndex="0">
+            <BankIcon />
+          </div>
+          <div className="option center" tabIndex="0">
+            <CreditCardIcon />
+          </div>
+        </div>
+
+        <div className="link-purchase">
+          <Checkbox text="Link to purchase order" />
+        </div>
+
+        <div className="purchase-order-type">
+          <select>
+            <option value="">Select Purchase Order</option>
+          </select>
         </div>
       </div>
     </StyledInvoiceBilling>
@@ -53,6 +70,7 @@ const StyledInvoiceBilling = styled.div`
 
   .form-control {
     margin-top: 15px;
+
     label {
       font-size: 12px;
       font-weight: 500;
@@ -78,6 +96,41 @@ const StyledInvoiceBilling = styled.div`
         min-width: auto;
       }
     }
+  }
+
+  .payments {
+    margin-top: 20px;
+
+    .payment-options {
+      display: grid;
+      grid-column-gap: ${({ theme }) => theme.padding.lg};
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin: 10px 0;
+
+      .option {
+        padding: 8px 0;
+        border: 1px solid ${({ theme }) => theme.colors.gray300};
+        border-radius: 4px;
+        cursor: pointer;
+        pointer-events: auto;
+
+        :focus {
+          border: 1px solid ${({ theme }) => theme.colors.primaryBlue};
+        }
+      }
+    }
+
+    .link-purchase {
+      margin: 20px 0 10px 0;
+
+      label {
+        font-size: 14px;
+        color: ${({ theme }) => theme.colors.primaryText};
+      }
+    }
+    /* * {
+      outline: 1px solid red;
+    } */
   }
 `;
 

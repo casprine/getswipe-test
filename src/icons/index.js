@@ -3,3 +3,8 @@ export { default as StarIcon } from './StarIcon';
 export { default as PenIcon } from './PenIcon';
 export { default as HashIcon } from './HashIcon';
 export { default as CalendarIcon } from './CalendarIcon';
+export { default as VisaIcon } from './VisaIcon';
+export { default as BankIcon } from './BankIcon';
+export { default as SwipeIcon } from './SwipeIcon';
+export { default as CreditCardIcon } from './CreditCardIcon';
+export { default as PlusIcon } from './PlusIcon';

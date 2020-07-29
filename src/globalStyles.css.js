@@ -89,7 +89,7 @@ const GlobalStyles = styled.createGlobalStyle`
   }
 
   .page-wrapper {
-    padding: 40px 0;
+    padding: 20px 0;
   }
 
   .button-text {
@@ -171,6 +171,26 @@ const GlobalStyles = styled.createGlobalStyle`
     margin: 8px 0;
     border: 1px solid ${({ theme }) => theme.colors.gray300};
     margin: 15px 0;
+  }
+
+  .recurring-section {
+    .gray-text {
+      font-size: 12px;
+      font-weight: 500;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+    .recurring-btn {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+
+      p {
+        font-weight: 500;
+        font-size: 15px;
+        margin-right: 10px;
+      }
+    }
   }
 `;
 

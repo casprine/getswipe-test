@@ -4,6 +4,7 @@ import React from 'react';
 import { Header } from './components';
 import { Button, ButtonGroup } from './components/formElements';
 import { InvoiceDetails, InvoiceNotes, InvoiceTemplate, InvoiceBilling } from './components/sections';
+import { PlusIcon } from './icons';
 
 const App = () => {
   return (
@@ -49,8 +50,14 @@ const App = () => {
             <InvoiceBilling />
           </section>
 
-          <section className="section-lg-padding section-gutter">
-            <p>hello world </p>
+          <section className="section-lg-padding section-gutter recurring-section">
+            <div className="black-text">Recurring</div>
+            <p className="gray-text">Schedule this invoice to be sent at regular intervals?</p>
+
+            <Button className="recurring-btn">
+              <p className="white-text">Create Recurring Invoice</p>
+              <PlusIcon />
+            </Button>
           </section>
         </div>
       </div>
