@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 // components
-import Input from './Input';
-import { StarIcon, PenIcon, HashIcon, CalendarIcon } from '../icons';
+import Input from '../formElements/TextInput';
+import { StarIcon, PenIcon, HashIcon, CalendarIcon } from '../../icons';
 
 const InvoiceDetails = () => {
   return (

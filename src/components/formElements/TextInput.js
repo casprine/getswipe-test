@@ -2,19 +2,20 @@ import React, { useReducer } from 'react';
 import styled from 'styled-components';
 
 // theme
-import theme from '../theme';
+import theme from '../../theme';
 
 const Input = ({ value, name, onChange, prependIcon: PrependIcon, ...rest }) => {
   const [focus, toggleFocus] = useReducer((toggled) => !toggled, false);
 
-  const svgFil = focus ? theme.colors.primaryBlue : theme.colors.gray300;
+  const fill = focus ? theme.colors.primaryBlue : theme.colors.gray300;
+
   return (
-    <StyledInput focus={focus}>
+    <StyledInput focus={focus} fill={fill}>
       <input onBlur={toggleFocus} onFocus={toggleFocus} {...rest} />
 
       {PrependIcon && (
         <div className="prepend-icon">
-          <PrependIcon fill={svgFil} />
+          <PrependIcon fill={fill} />
         </div>
       )}
     </StyledInput>
@@ -31,7 +32,7 @@ const StyledInput = styled.div`
     font-weight: 500;
     border-radius: 5px;
     min-width: 250px;
-    border: 1.5px solid ${({ theme, focus }) => (focus ? theme.colors.primaryBlue : theme.colors.gray300)};
+    border: 1.5px solid ${({ fill }) => fill};
     color: ${({ theme }) => theme.colors.primaryText};
     margin-top: 10px;
     outline: none;

@@ -1,14 +1,6 @@
 import * as styled from 'styled-components';
-import InterFont from './assets/Inter.var.ttf';
 
 const GlobalStyles = styled.createGlobalStyle`
-  @font-face {
-    font-family: 'Inter';
-    src: url(${InterFont}) format('truetype');
-    font-style: normal;
-    font-display: auto;
-  }
-
   * {
     box-sizing: border-box;
   }

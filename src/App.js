@@ -1,7 +1,9 @@
 import React from 'react';
 
 // components
-import { Header, Button, ButtonGroup, InvoiceDetails } from './components';
+import { Header } from './components';
+import { Button, ButtonGroup } from './components/formElements';
+import { InvoiceDetails } from './components/sections';
 
 const App = () => {
   return (
@@ -18,7 +20,7 @@ const App = () => {
           </Button>
 
           <Button variant="outline" tabIndex="1">
-            <p className="black-text button-text">Preview</p>
+            <p className="black-text button-text">Send</p>
           </Button>
         </ButtonGroup>
       </div>
