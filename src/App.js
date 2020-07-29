@@ -3,7 +3,7 @@ import React from 'react';
 // components
 import { Header } from './components';
 import { Button, ButtonGroup } from './components/formElements';
-import { InvoiceDetails } from './components/sections';
+import { InvoiceDetails, InvoiceNotes } from './components/sections';
 
 const App = () => {
   return (
@@ -36,7 +36,7 @@ const App = () => {
           </section>
 
           <section>
-            <p>hello world </p>
+            <InvoiceNotes />
           </section>
         </div>
 
