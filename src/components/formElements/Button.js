@@ -16,8 +16,7 @@ const StyledButton = styled.button`
   border-radius: 4px;
   background-color: ${({ theme, variant }) => (variant === 'outline' ? 'white' : theme.colors.primaryText)};
   padding: ${({ theme }) => `${theme.padding.lg} ${theme.padding.xlg}`};
-  border: 1.5px solid
-    ${({ theme, variant }) => (variant === 'outline' ? theme.colors.gray300 : theme.colors.primaryText)};
+  border: 1px solid ${({ theme, variant }) => (variant === 'outline' ? theme.colors.gray300 : theme.colors.primaryText)};
 `;
 
 Button.propTypes = {

@@ -3,7 +3,7 @@ import React from 'react';
 // components
 import { Header } from './components';
 import { Button, ButtonGroup } from './components/formElements';
-import { InvoiceDetails, InvoiceNotes } from './components/sections';
+import { InvoiceDetails, InvoiceNotes, InvoiceTemplate } from './components/sections';
 
 const App = () => {
   return (
@@ -41,15 +41,15 @@ const App = () => {
         </div>
 
         <div className="right-section">
-          <section>
+          <section className="section-lg-padding">
+            <InvoiceTemplate />
+          </section>
+
+          <section className="section-lg-padding">
             <p>hello world </p>
           </section>
 
-          <section>
-            <p>hello world </p>
-          </section>
-
-          <section>
+          <section className="section-lg-padding">
             <p>hello world </p>
           </section>
         </div>

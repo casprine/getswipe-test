@@ -7,7 +7,6 @@ const InvoiceNotes = () => {
       <StyledInvoiceNotes>
         <h4 className="header black-text">Notes</h4>
         <textarea name="" id="" cols="30" rows="10" />
-
         <div className="footer">
           <p className="gray-text">This will appear in the invoice email, PDF, and hosted page.</p>
           <p className="gray-text">500 Characters remaining</p>

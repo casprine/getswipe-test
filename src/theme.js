@@ -3,6 +3,7 @@ export default {
     primaryText: '#1A202C',
     primaryGreen: '#38A169',
     primaryBlue: '#1d5ecc',
+    gray700: '#4A5568',
     gray600: '#718096',
     gray500: '#A0AEC0',
     gray400: '#CBD5E0',

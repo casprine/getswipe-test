@@ -25,6 +25,15 @@ const Input = ({ value, name, onChange, prependIcon: PrependIcon, ...rest }) => 
 const StyledInput = styled.div`
   position: relative;
 
+  input[type='date']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+  }
+  input[type='date']::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+    display: none;
+  }
+
   input {
     padding: ${({ theme }) => `12px ${theme.padding.xlg}`};
     background-color: white;
@@ -32,7 +41,7 @@ const StyledInput = styled.div`
     font-weight: 500;
     border-radius: 5px;
     min-width: 250px;
-    border: 1.5px solid ${({ fill }) => fill};
+    border: 1px solid ${({ fill }) => fill};
     color: ${({ theme }) => theme.colors.primaryText};
     margin-top: 10px;
     outline: none;

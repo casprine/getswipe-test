@@ -39,12 +39,6 @@ const StyledInvoiceDetails = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  /* 
-  outline: 1px solid red;
-
-  * {
-    outline: 1px solid red;
-  } */
 
   .logo-container {
     display: flex;

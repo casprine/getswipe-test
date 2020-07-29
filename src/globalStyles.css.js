@@ -3,12 +3,16 @@ import * as styled from 'styled-components';
 const GlobalStyles = styled.createGlobalStyle`
   * {
     box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+      'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
 
   html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+      'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
 
   svg {
@@ -57,7 +61,7 @@ const GlobalStyles = styled.createGlobalStyle`
   }
 
   .container {
-    max-width: 1024px;
+    max-width: 1120px;
     margin: 0px auto;
     width: 100%;
     position: relative;
@@ -126,12 +130,17 @@ const GlobalStyles = styled.createGlobalStyle`
 
   .sections {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
     grid-column-gap: ${({ theme }) => theme.padding.xxlg};
 
     .left-section {
       grid-column-start: 1;
-      grid-column-end: 3;
+      grid-column-end: 2.6;
+    }
+
+    .right-section {
+      grid-column-start: 2;
+      grid-column-end: 5;
     }
   }
 
@@ -139,6 +148,10 @@ const GlobalStyles = styled.createGlobalStyle`
     border: 0.5px solid ${({ theme }) => theme.colors.gray300};
     border-radius: 4px;
     padding: ${({ theme }) => theme.padding.extra};
+  }
+
+  .section-lg-padding {
+    padding: ${({ theme }) => theme.padding.xxlg};
   }
 
   .input-container {
