@@ -1,7 +1,7 @@
 import React from 'react';
 
 // components
-import { Header, Button, ButtonGroup } from './components';
+import { Header, Button, ButtonGroup, InvoiceDetails } from './components';
 
 const App = () => {
   return (
@@ -21,6 +21,36 @@ const App = () => {
             <p className="black-text button-text">Preview</p>
           </Button>
         </ButtonGroup>
+      </div>
+
+      <div className="sections container">
+        <div className="left-section">
+          <section>
+            <InvoiceDetails />
+          </section>
+
+          <section>
+            <p>hello world </p>
+          </section>
+
+          <section>
+            <p>hello world </p>
+          </section>
+        </div>
+
+        <div className="right-section">
+          <section>
+            <p>hello world </p>
+          </section>
+
+          <section>
+            <p>hello world </p>
+          </section>
+
+          <section>
+            <p>hello world </p>
+          </section>
+        </div>
       </div>
     </main>
   );

@@ -14,5 +14,6 @@ export default {
     lg: '10px',
     xlg: '15px',
     xxlg: '20px',
+    extra: '30px',
   },
 };

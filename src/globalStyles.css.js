@@ -58,6 +58,12 @@ const GlobalStyles = styled.createGlobalStyle`
     cursor: pointer;
   }
 
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .container {
     max-width: 1024px;
     margin: 0px auto;
@@ -124,6 +130,23 @@ const GlobalStyles = styled.createGlobalStyle`
     border-bottom-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  .sections {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-column-gap: ${({ theme }) => theme.padding.xxlg};
+
+    .left-section {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+
+  section {
+    border: 0.5px solid ${({ theme }) => theme.colors.gray300};
+    border-radius: 4px;
+    padding: ${({ theme }) => theme.padding.extra};
   }
 `;
 

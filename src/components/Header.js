@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container">
         <div className="header">
           <h3 className="black-text">Create Invoice</h3>
-          <span className="subtext gray-text">Last saved 16 minutes ago</span>
+          <p className="subtext gray-text">Last saved 16 minutes ago</p>
         </div>
 
         <div tabIndex="1" className="close-icon-container rounded">
@@ -27,12 +27,10 @@ const Nav = styled.nav`
   .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 
   .header {
     display: flex;
-    align-items: center;
 
     h3 {
       margin-right: 20px;
@@ -43,7 +41,7 @@ const Nav = styled.nav`
     .subtext {
       display: block;
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 600;
       line-height: 30px;
     }
   }
