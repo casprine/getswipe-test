@@ -89,7 +89,7 @@ const GlobalStyles = styled.createGlobalStyle`
   }
 
   .page-wrapper {
-    padding: 20px 0;
+    padding: 40px 0;
   }
 
   .button-text {

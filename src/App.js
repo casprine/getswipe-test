@@ -3,7 +3,7 @@ import React from 'react';
 // components
 import { Header } from './components';
 import { Button, ButtonGroup } from './components/formElements';
-import { InvoiceDetails, InvoiceNotes, InvoiceTemplate, InvoiceBilling } from './components/sections';
+import { InvoiceDetails, InvoiceNotes, InvoiceTemplate, InvoiceBilling, InvoiceItems } from './components/sections';
 import { PlusIcon } from './icons';
 
 const App = () => {
@@ -33,7 +33,7 @@ const App = () => {
           </section>
 
           <section>
-            <p>hello world </p>
+            <InvoiceItems />
           </section>
 
           <section>
