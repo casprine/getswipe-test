@@ -5,7 +5,7 @@ function PlusIcon(props) {
     <svg width={20} height={20} viewBox="0 0 512 512" {...props}>
       <path
         fill="none"
-        stroke="white"
+        stroke={props.fill}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="32px"
@@ -13,7 +13,7 @@ function PlusIcon(props) {
       />
       <path
         fill="none"
-        stroke="white"
+        stroke={props.fill}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="32px"
@@ -22,5 +22,9 @@ function PlusIcon(props) {
     </svg>
   );
 }
+
+PlusIcon.defaultProps = {
+  fill: 'white',
+};
 
 export default PlusIcon;

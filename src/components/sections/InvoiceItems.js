@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // component
 import { TextInput } from '../formElements';
+import { PlusIcon, DollarIcon } from '../../icons';
 
 const InvoiceItem = ({}) => {
   return (
@@ -16,11 +17,11 @@ const InvoiceItem = ({}) => {
       </div>
 
       <div className="unit-price">
-        <TextInput />
+        <TextInput appendIcon={DollarIcon} className="unit-price-input" />
       </div>
 
       <div className="amount">
-        <p className="black-text">0.00</p>
+        <p className="black-text calculated-amount">0.00</p>
       </div>
     </div>
   );
@@ -31,32 +32,73 @@ const InvoiceItems = () => {
     <Container>
       <div className="grid">
         <div className="description">
-          <p className="black-text">Description</p>
+          <h5 className="black-text">Description</h5>
         </div>
 
         <div className="quantity">
-          <p className="black-text">Quantity</p>
+          <h5 className="black-text">Quantity</h5>
         </div>
 
         <div className="unit-price">
-          <p className="black-text">Unit Price</p>
+          <h5 className="black-text">Unit Price</h5>
         </div>
 
         <div className="amount">
-          <p className="black-text">Amount</p>
+          <h5 className="black-text">Amount</h5>
         </div>
       </div>
 
-      <InvoiceItem />
+      <div className="items">
+        <InvoiceItem />
+      </div>
+
+      <div className="footer grid">
+        <div className="description">
+          <button>
+            <p>Add another item</p>
+            <PlusIcon fill="#1A202C" />
+          </button>
+        </div>
+
+        <div className="quantity">
+          <p className="gray-text">Subtotal</p>
+        </div>
+        <span />
+
+        <div className="amount">
+          <p className="gray-text">0.00</p>
+        </div>
+      </div>
+
+      <div className="tax-discount grid">
+        <div className="container">
+          <button>
+            <p>Add Tax </p>
+          </button>
+          <button>
+            <p>Add Discount </p>
+          </button>
+          <hr />
+
+          <div className="total">
+            <p className="black-text">Total</p>
+            <div className="black-text">0.00</div>
+          </div>
+        </div>
+      </div>
     </Container>
   );
 };
 
 const Container = styled.div`
+  * {
+    /* outline: 1px solid red; */
+  }
+
   input {
     min-width: auto;
     width: 100%;
-    padding: 8px 15px;
+    padding: 10px 10px;
   }
 
   .grid {
@@ -72,9 +114,90 @@ const Container = styled.div`
     }
 
     .amount {
+      .calculated-amount {
+        margin-top: 10px;
+      }
+      h5,
       p {
         text-align: right;
       }
+    }
+  }
+
+  .footer {
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      border: 0;
+
+      p {
+        font-weight: 500;
+        color: ${({ theme }) => theme.colors.primaryText};
+      }
+    }
+
+    .quantity,
+    .amount {
+      p {
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .tax-discount {
+    .container {
+      grid-column-start: 2;
+      grid-column-end: 5;
+      display: flex;
+      flex-direction: column;
+      justify-items: flex-start;
+      align-items: flex-start;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border: 0;
+        padding: 0;
+        margin-bottom: 10px;
+
+        p {
+          color: ${({ theme }) => theme.colors.primaryGreen};
+          font-weight: 500;
+        }
+      }
+
+      hr {
+        width: 100%;
+        background-color: ${({ theme }) => theme.colors.gray300};
+        height: 1px;
+        border: 0;
+        margin-bottom: 20px;
+      }
+
+      .total {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .unit-price-input {
+    text-align: RIGHT;
+    padding-left: 30px;
+  }
+
+  .append-icon {
+    margin-top: -3px;
+    left: 10px;
+    svg {
+      width: 15px;
+      height: 15px;
     }
   }
 `;

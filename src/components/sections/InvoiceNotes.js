@@ -5,7 +5,7 @@ const InvoiceNotes = () => {
   return (
     <>
       <StyledInvoiceNotes>
-        <h4 className="header black-text">Notes</h4>
+        <h5 className="header black-text">Notes</h5>
         <textarea name="" id="" cols="30" rows="10" />
         <div className="footer">
           <p className="gray-text">This will appear in the invoice email, PDF, and hosted page.</p>
@@ -21,7 +21,6 @@ const StyledInvoiceNotes = styled.div`
     width: 100%;
     margin: 15px 0;
     font-size: 14px;
-    font-weight: 500;
     border-radius: 5px;
     border: 1px solid ${({ theme }) => theme.colors.gray300};
     padding: ${({ theme }) => `12px ${theme.padding.xlg}`};

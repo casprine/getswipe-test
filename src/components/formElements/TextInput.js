@@ -4,13 +4,18 @@ import styled from 'styled-components';
 // theme
 import theme from '../../theme';
 
-const Input = ({ value, name, onChange, prependIcon: PrependIcon, ...rest }) => {
+const Input = ({ value, name, onChange, prependIcon: PrependIcon, appendIcon: AppendIcon, ...rest }) => {
   const [focus, toggleFocus] = useReducer((toggled) => !toggled, false);
 
   const fill = focus ? theme.colors.primaryBlue : theme.colors.gray300;
 
   return (
     <StyledInput focus={focus} fill={fill}>
+      {AppendIcon && (
+        <div className="append-icon">
+          <AppendIcon fill={fill} />
+        </div>
+      )}
       <input onBlur={toggleFocus} onFocus={toggleFocus} {...rest} />
 
       {PrependIcon && (
@@ -49,6 +54,19 @@ const StyledInput = styled.div`
     ::placeholder {
       color: ${({ theme }) => theme.colors.gray500};
       font-weight: 500;
+    }
+  }
+
+  .append-icon {
+    position: absolute;
+    text-align: right;
+    left: 15px;
+    top: 50%;
+    margin-top: -5px;
+
+    svg {
+      width: 17px;
+      height: 17px;
     }
   }
 

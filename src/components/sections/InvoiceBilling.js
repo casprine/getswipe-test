@@ -128,9 +128,6 @@ const StyledInvoiceBilling = styled.div`
         color: ${({ theme }) => theme.colors.primaryText};
       }
     }
-    /* * {
-      outline: 1px solid red;
-    } */
   }
 `;
 

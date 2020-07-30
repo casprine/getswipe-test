@@ -8,3 +8,4 @@ export { default as BankIcon } from './BankIcon';
 export { default as SwipeIcon } from './SwipeIcon';
 export { default as CreditCardIcon } from './CreditCardIcon';
 export { default as PlusIcon } from './PlusIcon';
+export { default as DollarIcon } from './DollarIcon';

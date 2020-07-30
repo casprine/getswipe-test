@@ -32,7 +32,7 @@ const App = () => {
             <InvoiceDetails />
           </section>
 
-          <section>
+          <section className="invoice-items-section">
             <InvoiceItems />
           </section>
 

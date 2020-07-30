@@ -38,6 +38,8 @@ const GlobalStyles = styled.createGlobalStyle`
 
   main {
     min-height: 100vh;
+    outline: 1px solid red;
+    padding-bottom: 8rem;
   }
 
   body {
@@ -146,6 +148,10 @@ const GlobalStyles = styled.createGlobalStyle`
     border: 0.5px solid ${({ theme }) => theme.colors.gray300};
     border-radius: 4px;
     padding: ${({ theme }) => theme.padding.extra};
+  }
+
+  .invoice-items-section {
+    padding: 30px 30px 0 30px;
   }
 
   .section-lg-padding {
