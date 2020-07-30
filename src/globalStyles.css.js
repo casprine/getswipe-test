@@ -166,8 +166,7 @@ const GlobalStyles = styled.createGlobalStyle`
     margin-bottom: 10px;
   }
 
-  select {
-    padding: ${({ theme }) => `12px ${theme.padding.lg}`};
+  .select {
     font-size: 14px;
     font-weight: 500;
     border-radius: 5px;

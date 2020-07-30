@@ -2,8 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 // components
-import { TextInput, Checkbox } from '../formElements';
+import { TextInput, Checkbox, Select } from '../formElements';
 import { CalendarIcon, VisaIcon, BankIcon, SwipeIcon, CreditCardIcon } from '../../icons';
+
+// dropdown options
+const options = [
+  {
+    label: 'Use Swipe payment page',
+    value: 'swipe',
+  },
+];
+
+const orderTypeOptions = [
+  {
+    label: 'Select Purchase Order',
+    value: '',
+  },
+];
 
 const InvoiceBilling = () => {
   return (
@@ -25,9 +40,7 @@ const InvoiceBilling = () => {
 
       <div className="form-control">
         <label>How do you want to get paid?</label>
-        <select>
-          <option value="">Use Swipe payment page</option>
-        </select>
+        <Select options={options} />
 
         <label>A link to a swipe payment page will be included in the invoice email</label>
       </div>
@@ -54,9 +67,7 @@ const InvoiceBilling = () => {
         </div>
 
         <div className="purchase-order-type">
-          <select>
-            <option value="">Select Purchase Order</option>
-          </select>
+          <Select options={orderTypeOptions} />
         </div>
       </div>
     </StyledInvoiceBilling>
