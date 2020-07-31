@@ -16,21 +16,22 @@ const InvoiceItem = ({ unitPrice, description, quantity, onChange, id }) => {
       </div>
 
       <div className="quantity">
-        <TextInput name="quantity" value={quantity} onChange={(e) => onChange(e, id)} />
+        <TextInput type="number" name="quantity" value={quantity} onChange={(e) => onChange(e, id)} />
       </div>
 
       <div className="unit-price">
         <TextInput
           appendIcon={DollarIcon}
           className="unit-price-input"
-          name="unit-price"
+          name="unitPrice"
           value={unitPrice}
           onChange={(e) => onChange(e, id)}
+          type="number"
         />
       </div>
 
       <div className="amount">
-        <p className="black-text calculated-amount">0.00</p>
+        <p className="black-text calculated-amount">{parseFloat(quantity * unitPrice).toFixed(2)}</p>
       </div>
     </div>
   );

@@ -1,5 +1,17 @@
 import React, { createContext, useState } from 'react';
 
+function uniqueId() {
+  const gen = (count) => {
+    let out = '';
+    for (let index = 0; index < count; index++) {
+      out += ((1 + Math.random()) * 0x10000 || 0).toString(16).substring(1);
+    }
+    return out;
+  };
+
+  return [gen(2), gen(1), gen(1), gen(1), gen(3)].join('-');
+}
+
 const Store = createContext({});
 
 const Provider = ({ children }) => {
@@ -8,7 +20,7 @@ const Provider = ({ children }) => {
       description: '',
       quantity: 1,
       unitPrice: '0.00',
-      id: '3288540e-37fb-467d-9a2c-502756c625a8',
+      id: uniqueId(),
     },
   ]);
 
@@ -31,7 +43,7 @@ const Provider = ({ children }) => {
         description: '',
         quantity: 1,
         unitPrice: '0.00',
-        id: '3288540e-37fb-467d-9a2c-502756c625a8',
+        id: uniqueId(),
       },
     ]);
   }
