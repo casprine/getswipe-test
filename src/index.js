@@ -8,11 +8,16 @@ import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import GlobalStyles from './globalStyles.css';
 
+// context
+import { Provider } from './context';
+
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <App />
+      <Provider>
+        <App />
+      </Provider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),

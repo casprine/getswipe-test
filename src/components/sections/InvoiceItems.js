@@ -5,19 +5,28 @@ import styled from 'styled-components';
 import { TextInput } from '../formElements';
 import { PlusIcon, DollarIcon } from '../../icons';
 
-const InvoiceItem = ({}) => {
+// context
+import StoreContext from '../../context';
+
+const InvoiceItem = ({ unitPrice, description, quantity, onChange, id }) => {
   return (
     <div className="grid">
       <div className="description">
-        <TextInput />
+        <TextInput name="description" value={description} onChange={(e) => onChange(e, id)} />
       </div>
 
       <div className="quantity">
-        <TextInput />
+        <TextInput name="quantity" value={quantity} onChange={(e) => onChange(e, id)} />
       </div>
 
       <div className="unit-price">
-        <TextInput appendIcon={DollarIcon} className="unit-price-input" />
+        <TextInput
+          appendIcon={DollarIcon}
+          className="unit-price-input"
+          name="unit-price"
+          value={unitPrice}
+          onChange={(e) => onChange(e, id)}
+        />
       </div>
 
       <div className="amount">
@@ -28,6 +37,8 @@ const InvoiceItem = ({}) => {
 };
 
 const InvoiceItems = () => {
+  const { invoiceItems, handleInvoiceItemChange, addNewInvoiceItem } = React.useContext(StoreContext);
+
   return (
     <Container>
       <div className="grid">
@@ -49,12 +60,14 @@ const InvoiceItems = () => {
       </div>
 
       <div className="items">
-        <InvoiceItem />
+        {invoiceItems.map((item) => (
+          <InvoiceItem {...item} key={item.id} onChange={handleInvoiceItemChange} />
+        ))}
       </div>
 
       <div className="footer grid">
         <div className="description">
-          <button>
+          <button onClick={addNewInvoiceItem}>
             <p>Add another item</p>
             <PlusIcon fill="#1A202C" />
           </button>

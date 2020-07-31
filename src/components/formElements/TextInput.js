@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // theme
 import theme from '../../theme';
 
-const Input = ({ value, name, onChange, prependIcon: PrependIcon, appendIcon: AppendIcon, ...rest }) => {
+const Input = ({ prependIcon: PrependIcon, appendIcon: AppendIcon, ...rest }) => {
   const [focus, toggleFocus] = useReducer((toggled) => !toggled, false);
 
   const fill = focus ? theme.colors.primaryBlue : theme.colors.gray300;
