@@ -29,7 +29,6 @@ const options = [
 ];
 
 const CustomOption = ({ innerProps, isDisabled, data, isFocused, ...rest }) => {
-  console.log({ isFocused });
   return (
     <>
       {!isDisabled ? (
@@ -48,11 +47,14 @@ const formatGroupLabel = (data) => (
   </div>
 );
 
-const customStyles = {};
 const InvoiceDetails = () => {
-  const { invoiceDetails, handleInvoiceDetailChange } = React.useContext(StoreContext);
+  const { invoiceDetails, handleInvoiceDetailChange, selectedCustomer, selectCustomer } = React.useContext(
+    StoreContext,
+  );
 
   const [calendarType, setCalendarType] = React.useState('text');
+  const [openSelect, setOpenSelect] = React.useState(false);
+  const [showSelect, setShowSelect] = React.useState(true);
 
   return (
     <>
@@ -62,28 +64,42 @@ const InvoiceDetails = () => {
             <StarIcon />
           </div>
 
-          <div className="select-company">
-            <label>Bill To</label>
-            <Select
-              styles={customStyles}
-              placeholder="Select or add customer"
-              options={options}
-              formatGroupLabel={formatGroupLabel}
-              components={{
-                Option: CustomOption,
-              }}
-            />
-          </div>
-          {/* <div className="company">
-            <h4 className="company-name">Swipe</h4>
-            <div className="company-email">
-              <p className="gray-text">vendors@getswipe.com</p>
-              <div className="edit-icon center" tabIndex="3">
-                <PenIcon />
-              </div>
-              <h5 tabIndex="3">Edit</h5>
+          {showSelect && (
+            <div className="select-company">
+              <label>Bill To</label>
+              <Select
+                onBlur={() => setOpenSelect(false)}
+                onFocus={() => setOpenSelect(true)}
+                menuIsOpen={openSelect}
+                value={selectedCustomer}
+                onChange={(value) => {
+                  selectCustomer(value);
+                  setShowSelect(false);
+                }}
+                placeholder="Select or add customer"
+                options={options}
+                formatGroupLabel={formatGroupLabel}
+                components={{
+                  Option: CustomOption,
+                }}
+              />
             </div>
-          </div> */}
+          )}
+
+          {!showSelect && (
+            <div className="company">
+              <h4 className="company-name">Swipe</h4>
+              <div className="company-email">
+                <p className="gray-text">vendors@getswipe.com</p>
+                <div className="edit-icon center" tabIndex="3" onClick={() => setShowSelect(true)}>
+                  <PenIcon />
+                </div>
+                <h5 tabIndex="3" onClick={() => setShowSelect(true)}>
+                  Edit
+                </h5>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="right">

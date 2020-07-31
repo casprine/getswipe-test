@@ -22,6 +22,8 @@ const defaultInvoiceItem = {
 const Store = createContext({});
 
 const Provider = ({ children }) => {
+  const [selectedCustomer, setSelectedCustomer] = useState(null);
+
   const [invoiceItems, setInvoiceItems] = useState([defaultInvoiceItem]);
 
   const [invoiceDetails, setInvoiceDetails] = useState({
@@ -56,6 +58,8 @@ const Provider = ({ children }) => {
         totalPrice,
         subTotal,
         invoiceDetails,
+        selectedCustomer,
+        selectCustomer: (value) => setSelectedCustomer(value),
       }}
     >
       {children}
