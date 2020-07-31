@@ -108,10 +108,6 @@ const InvoiceItems = () => {
 };
 
 const Container = styled.div`
-  * {
-    /* outline: 1px solid red; */
-  }
-
   input {
     min-width: auto;
     width: 100%;
