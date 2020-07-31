@@ -6,12 +6,16 @@ import theme from '../../theme';
 
 // components
 import { TextInput, Select } from '../formElements';
-import { StarIcon, PenIcon, HashIcon, CalendarIcon } from '../../icons';
+import { StarIcon, PenIcon, HashIcon, CalendarIcon, PlusIcon } from '../../icons';
 
 // context
 import StoreContext from '../../context';
 
 const options = [
+  {
+    custom: true,
+  },
+
   {
     label: 'recent',
     options: [
@@ -33,8 +37,17 @@ const CustomOption = ({ innerProps, isDisabled, data, isFocused, ...rest }) => {
     <>
       {!isDisabled ? (
         <StyledOption className="custom-option" isFocused={isFocused} {...innerProps} {...rest}>
-          <p className="black-text">{data.label}</p>
-          <p className="gray-text">{data.value}</p>
+          {data.custom ? (
+            <div className="add-new-customer" onClick={() => null}>
+              <PlusIcon />
+              <p className="black-text">Add New Customer</p>
+            </div>
+          ) : (
+            <>
+              <p className="black-text">{data.label}</p>
+              <p className="gray-text">{data.value}</p>
+            </>
+          )}
         </StyledOption>
       ) : null}
     </>
@@ -73,6 +86,8 @@ const InvoiceDetails = () => {
                 menuIsOpen={openSelect}
                 value={selectedCustomer}
                 onChange={(value) => {
+                  if (value.custom) return;
+
                   selectCustomer(value);
                   setShowSelect(false);
                 }}
@@ -90,7 +105,7 @@ const InvoiceDetails = () => {
             <div className="company">
               <h4 className="company-name">Swipe</h4>
               <div className="company-email">
-                <p className="gray-text">vendors@getswipe.com</p>
+                <p className="gray-text">{selectedCustomer.value}</p>
                 <div className="edit-icon center" tabIndex="3" onClick={() => setShowSelect(true)}>
                   <PenIcon />
                 </div>
@@ -160,6 +175,15 @@ const StyledInvoiceDetails = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
+  .add-new-customer {
+    display: flex;
+    align-items: flex-end;
+
+    p {
+      margin-left: 10px;
+    }
+  }
 
   .select-company {
     width: 300px;

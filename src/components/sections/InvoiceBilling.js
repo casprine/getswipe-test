@@ -38,7 +38,7 @@ const InvoiceBilling = () => {
         </div>
       </div>
 
-      <div className="form-control">
+      <div className="form-control reduced-margin">
         <label>How do you want to get paid?</label>
         <Select defaultValue={options[0]} options={options} />
 
@@ -67,7 +67,7 @@ const InvoiceBilling = () => {
         </div>
 
         <div className="purchase-order-type">
-          <Select options={orderTypeOptions} />
+          <Select options={orderTypeOptions} defaultValue={orderTypeOptions[0]} />
         </div>
       </div>
     </StyledInvoiceBilling>
@@ -75,7 +75,7 @@ const InvoiceBilling = () => {
 };
 
 const StyledInvoiceBilling = styled.div`
-  select {
+  .select {
     margin: 5px 0;
   }
 
