@@ -17,7 +17,7 @@ const InvoiceTemplate = () => {
     <>
       <StyledInvoiceTemplate>
         <h4 className="black-text">Template</h4>
-        <Select className="select" options={options} />
+        <Select defaultValue={options[0]} className="select" options={options} />
 
         <div className="checkbox-container">
           <Checkbox name="" value="" text="Save invoice as template" />

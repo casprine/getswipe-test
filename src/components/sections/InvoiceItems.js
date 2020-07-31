@@ -152,6 +152,7 @@ const Container = styled.div`
       p {
         font-weight: 500;
         color: ${({ theme }) => theme.colors.primaryText};
+        margin-right: 10px;
       }
     }
 

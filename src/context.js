@@ -12,17 +12,23 @@ function uniqueId() {
   return [gen(2), gen(1), gen(1), gen(1), gen(3)].join('-');
 }
 
+const defaultInvoiceItem = {
+  description: '',
+  quantity: 1,
+  unitPrice: '',
+  id: uniqueId(),
+};
+
 const Store = createContext({});
 
 const Provider = ({ children }) => {
-  const [invoiceItems, setInvoiceItems] = useState([
-    {
-      description: '',
-      quantity: 1,
-      unitPrice: '',
-      id: uniqueId(),
-    },
-  ]);
+  const [invoiceItems, setInvoiceItems] = useState([defaultInvoiceItem]);
+
+  const [invoiceDetails, setInvoiceDetails] = useState({
+    number: '',
+    address: '',
+    date: '',
+  });
 
   const [totalPrice, setTotalPrice] = useState(null);
   const [subTotal, setSubTotal] = useState(null);
@@ -37,6 +43,7 @@ const Provider = ({ children }) => {
     }, 0);
 
     setSubTotal(Number(total).toFixed(2));
+    setTotalPrice(Number(total).toFixed(2));
   }, [invoiceItems]);
 
   return (
@@ -44,9 +51,11 @@ const Provider = ({ children }) => {
       value={{
         invoiceItems,
         handleInvoiceItemChange,
+        handleInvoiceDetailChange,
         addNewInvoiceItem,
         totalPrice,
         subTotal,
+        invoiceDetails,
       }}
     >
       {children}
@@ -63,6 +72,15 @@ const Provider = ({ children }) => {
         id: uniqueId(),
       },
     ]);
+  }
+
+  function handleInvoiceDetailChange(e) {
+    const { value, name } = e.target;
+
+    setInvoiceDetails({
+      ...invoiceDetails,
+      [name]: value,
+    });
   }
 
   function handleInvoiceItemChange(e, id) {

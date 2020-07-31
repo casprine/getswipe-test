@@ -40,7 +40,7 @@ const InvoiceBilling = () => {
 
       <div className="form-control">
         <label>How do you want to get paid?</label>
-        <Select options={options} />
+        <Select defaultValue={options[0]} options={options} />
 
         <label>A link to a swipe payment page will be included in the invoice email</label>
       </div>
