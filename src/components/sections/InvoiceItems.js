@@ -27,6 +27,7 @@ const InvoiceItem = ({ unitPrice, description, quantity, onChange, id }) => {
           value={unitPrice}
           onChange={(e) => onChange(e, id)}
           type="number"
+          placeholder="0.00"
         />
       </div>
 
@@ -38,7 +39,9 @@ const InvoiceItem = ({ unitPrice, description, quantity, onChange, id }) => {
 };
 
 const InvoiceItems = () => {
-  const { invoiceItems, handleInvoiceItemChange, addNewInvoiceItem } = React.useContext(StoreContext);
+  const { invoiceItems, handleInvoiceItemChange, addNewInvoiceItem, totalPrice, subTotal } = React.useContext(
+    StoreContext,
+  );
 
   return (
     <Container>
@@ -80,7 +83,7 @@ const InvoiceItems = () => {
         <span />
 
         <div className="amount">
-          <p className="gray-text">0.00</p>
+          <p className="gray-text">{subTotal}</p>
         </div>
       </div>
 
@@ -96,7 +99,7 @@ const InvoiceItems = () => {
 
           <div className="total">
             <p className="black-text">Total</p>
-            <div className="black-text">0.00</div>
+            <div className="black-text">{totalPrice}</div>
           </div>
         </div>
       </div>

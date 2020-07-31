@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 function uniqueId() {
   const gen = (count) => {
@@ -19,10 +19,25 @@ const Provider = ({ children }) => {
     {
       description: '',
       quantity: 1,
-      unitPrice: '0.00',
+      unitPrice: '',
       id: uniqueId(),
     },
   ]);
+
+  const [totalPrice, setTotalPrice] = useState(null);
+  const [subTotal, setSubTotal] = useState(null);
+
+  useEffect(() => {
+    const allTotalAmounts = [];
+
+    invoiceItems.map((item) => allTotalAmounts.push(item.quantity * Number(item.unitPrice)));
+
+    const total = allTotalAmounts.reduce((acc, item) => {
+      return acc + item;
+    }, 0);
+
+    setSubTotal(Number(total).toFixed(2));
+  }, [invoiceItems]);
 
   return (
     <Store.Provider
@@ -30,6 +45,8 @@ const Provider = ({ children }) => {
         invoiceItems,
         handleInvoiceItemChange,
         addNewInvoiceItem,
+        totalPrice,
+        subTotal,
       }}
     >
       {children}
@@ -42,7 +59,7 @@ const Provider = ({ children }) => {
       {
         description: '',
         quantity: 1,
-        unitPrice: '0.00',
+        unitPrice: '',
         id: uniqueId(),
       },
     ]);
