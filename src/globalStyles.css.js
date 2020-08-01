@@ -47,7 +47,6 @@ const GlobalStyles = styled.createGlobalStyle`
 
   main {
     min-height: 100vh;
-    outline: 1px solid red;
     padding-bottom: 8rem;
   }
 

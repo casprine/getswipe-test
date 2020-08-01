@@ -39,7 +39,7 @@ const CustomOption = ({ innerProps, isDisabled, data, isFocused, ...rest }) => {
         <StyledOption className="custom-option" isFocused={isFocused} {...innerProps} {...rest}>
           {data.custom ? (
             <div className="add-new-customer" onClick={() => null}>
-              <PlusIcon />
+              <PlusIcon fill={isFocused ? 'white' : 'black'} />
               <p className="black-text">Add New Customer</p>
             </div>
           ) : (
